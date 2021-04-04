@@ -1,0 +1,43 @@
+[2021-03-22 16:29:35,856] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: test_slack.send_slack 2021-03-22T07:29:32.368245+00:00 [queued]>
+[2021-03-22 16:29:35,871] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: test_slack.send_slack 2021-03-22T07:29:32.368245+00:00 [queued]>
+[2021-03-22 16:29:35,871] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-03-22 16:29:35,871] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2021-03-22 16:29:35,872] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-03-22 16:29:35,883] {taskinstance.py:1063} INFO - Executing <Task(SlackAPIPostOperator): send_slack> on 2021-03-22T07:29:32.368245+00:00
+[2021-03-22 16:29:35,886] {standard_task_runner.py:52} INFO - Started process 13360 to run task
+[2021-03-22 16:29:35,898] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'test_slack', 'send_slack', '2021-03-22T07:29:32.368245+00:00', '--job-id', '19', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/slack.py', '--cfg-path', '/var/folders/1l/hpssfvcn1z7dpsnpgtc10rlw0000gn/T/tmp0pymk59h', '--error-file', '/var/folders/1l/hpssfvcn1z7dpsnpgtc10rlw0000gn/T/tmpo2z00ot7']
+[2021-03-22 16:29:35,903] {standard_task_runner.py:77} INFO - Job 19: Subtask send_slack
+[2021-03-22 16:29:35,941] {logging_mixin.py:104} INFO - Running <TaskInstance: test_slack.send_slack 2021-03-22T07:29:32.368245+00:00 [running]> on host Choui-MacBook-Pro.local
+[2021-03-22 16:29:35,973] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=hana
+AIRFLOW_CTX_DAG_ID=test_slack
+AIRFLOW_CTX_TASK_ID=send_slack
+AIRFLOW_CTX_EXECUTION_DATE=2021-03-22T07:29:32.368245+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2021-03-22T07:29:32.368245+00:00
+[2021-03-22 16:29:36,536] {taskinstance.py:1455} ERROR - The request to the Slack API failed.
+The server responded with: {'ok': False, 'error': 'missing_scope', 'needed': 'chat:write:bot', 'provided': 'incoming-webhook'}
+Traceback (most recent call last):
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/airflow/providers/slack/operators/slack.py", line 87, in execute
+    slack.call(self.method, json=self.api_params)
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/airflow/providers/slack/hooks/slack.py", line 103, in call
+    self.client.api_call(api_method, **kwargs)
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/slack_sdk/web/base_client.py", line 134, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/slack_sdk/web/base_client.py", line 177, in _sync_send
+    additional_headers=headers,
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/slack_sdk/web/base_client.py", line 305, in _urllib_api_call
+    status_code=response["status"],
+  File "/Users/cho/anaconda3/envs/test/lib/python3.6/site-packages/slack_sdk/web/slack_response.py", line 201, in validate
+    raise e.SlackApiError(message=msg, response=self)
+slack_sdk.errors.SlackApiError: The request to the Slack API failed.
+The server responded with: {'ok': False, 'error': 'missing_scope', 'needed': 'chat:write:bot', 'provided': 'incoming-webhook'}
+[2021-03-22 16:29:36,539] {taskinstance.py:1503} INFO - Marking task as FAILED. dag_id=test_slack, task_id=send_slack, execution_date=20210322T072932, start_date=20210322T072935, end_date=20210322T072936
+[2021-03-22 16:29:36,598] {local_task_job.py:146} INFO - Task exited with return code 1

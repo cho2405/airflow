@@ -1,0 +1,8 @@
+[2021-03-22 14:34:33,235] {scheduler_job.py:182} INFO - Started process (PID=6407) to work on /Users/cho/airflow/dags/test.py
+[2021-03-22 14:34:33,236] {scheduler_job.py:629} INFO - Processing file /Users/cho/airflow/dags/test.py for tasks to queue
+[2021-03-22 14:34:33,237] {logging_mixin.py:104} INFO - [2021-03-22 14:34:33,237] {dagbag.py:448} INFO - Filling up the DagBag from /Users/cho/airflow/dags/test.py
+[2021-03-22 14:34:33,252] {scheduler_job.py:639} INFO - DAG(s) dict_keys(['my_first_dag']) retrieved from /Users/cho/airflow/dags/test.py
+[2021-03-22 14:34:33,270] {logging_mixin.py:104} INFO - [2021-03-22 14:34:33,270] {dag.py:1818} INFO - Sync 1 DAGs
+[2021-03-22 14:34:33,279] {logging_mixin.py:104} INFO - [2021-03-22 14:34:33,279] {dag.py:1837} INFO - Creating ORM DAG for my_first_dag
+[2021-03-22 14:34:33,289] {logging_mixin.py:104} INFO - [2021-03-22 14:34:33,289] {dag.py:2273} INFO - Setting next_dagrun for my_first_dag to 2021-03-21 00:00:00+00:00
+[2021-03-22 14:34:33,309] {scheduler_job.py:190} INFO - Processing /Users/cho/airflow/dags/test.py took 0.078 seconds

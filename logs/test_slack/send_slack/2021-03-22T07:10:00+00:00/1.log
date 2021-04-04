@@ -1,0 +1,21 @@
+[2021-03-22 17:17:34,531] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: test_slack.send_slack 2021-03-22T07:10:00+00:00 [queued]>
+[2021-03-22 17:17:34,538] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: test_slack.send_slack 2021-03-22T07:10:00+00:00 [queued]>
+[2021-03-22 17:17:34,538] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-03-22 17:17:34,538] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2021-03-22 17:17:34,538] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-03-22 17:17:34,546] {taskinstance.py:1063} INFO - Executing <Task(SlackAPIPostOperator): send_slack> on 2021-03-22T07:10:00+00:00
+[2021-03-22 17:17:34,548] {standard_task_runner.py:52} INFO - Started process 16698 to run task
+[2021-03-22 17:17:34,557] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'test_slack', 'send_slack', '2021-03-22T07:10:00+00:00', '--job-id', '30', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/slack.py', '--cfg-path', '/var/folders/1l/hpssfvcn1z7dpsnpgtc10rlw0000gn/T/tmpbndxn9g4', '--error-file', '/var/folders/1l/hpssfvcn1z7dpsnpgtc10rlw0000gn/T/tmphg45qjwu']
+[2021-03-22 17:17:34,561] {standard_task_runner.py:77} INFO - Job 30: Subtask send_slack
+[2021-03-22 17:17:34,601] {logging_mixin.py:104} INFO - Running <TaskInstance: test_slack.send_slack 2021-03-22T07:10:00+00:00 [running]> on host Choui-MacBook-Pro.local
+[2021-03-22 17:17:34,635] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=hana
+AIRFLOW_CTX_DAG_ID=test_slack
+AIRFLOW_CTX_TASK_ID=send_slack
+AIRFLOW_CTX_EXECUTION_DATE=2021-03-22T07:10:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-03-22T07:10:00+00:00
+[2021-03-22 17:17:35,213] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=test_slack, task_id=send_slack, execution_date=20210322T071000, start_date=20210322T081734, end_date=20210322T081735
+[2021-03-22 17:17:35,244] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-03-22 17:17:35,290] {local_task_job.py:146} INFO - Task exited with return code 0
